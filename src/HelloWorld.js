@@ -11,12 +11,17 @@ export default class HelloWorld extends Component {
     this.setState({ greeting: 'Bonjour '});
   }
 
+  removeGreeting = () => {
+    this.props.removeGreeting(this.props.name);
+  }
+
   render() {
     return (
       <div className="hello-world">
         {this.state.greeting} {this.props.name}!
         <br/>
         <button onClick={this.frenchify}>Frenchify!</button>
+        <button onClick={this.removeGreeting}>Remove</button>
       </div>
     );
   }

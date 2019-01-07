@@ -28,7 +28,11 @@ export default class HelloWorldList extends Component {
 
   renderGreetings = () => {
     return this.state.greetings.map(name => (
-      <HelloWorld key={name} name={name}/>
+      <HelloWorld
+        key={name}
+        name={name}
+        removeGreeting={this.removeGreeting}
+      />
     ));
   }
 
