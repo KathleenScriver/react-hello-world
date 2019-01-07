@@ -19,6 +19,13 @@ export default class HelloWorldList extends Component {
     this.setState({ greetings: [...this.state.greetings, newName] })
   }
 
+  removeGreeting = (removeName) => {
+    const filteredNames = this.state.greetings.filter(name => {
+      return name !== removeName;
+    });
+    this.setState({ greetings: filteredNames });
+  }
+
   renderGreetings = () => {
     return this.state.greetings.map(name => (
       <HelloWorld key={name} name={name}/>
